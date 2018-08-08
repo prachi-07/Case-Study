@@ -1,14 +1,30 @@
+<%@page import="lti.hola.bean.RegisterBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-<h1 ALIGN="center">Hola-Community of Experts</h1>
-<h4>Hello Visitor</h4>
-<hr size="3" color="midnightblue">
+	<h1 ALIGN="center">Hola-Community of Experts</h1>
+	<%
+		RegisterBean user = (RegisterBean) session.getAttribute("user");
+		if (user != null) {
+	%>
+	<h4>
+		Hello
+		<%=user.getName()%>
+		| <a href="User.hola?logout=yes">Logout</a>
+	</h4>
+	<%
+		} else {
+	%>
+	<h4>Hello Visitor</h4>
+	<%
+		}
+	%>
+	<hr size="3" color="midnightblue">
 </body>
 </html>

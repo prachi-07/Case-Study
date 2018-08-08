@@ -19,7 +19,6 @@ public class LoginController {
 		login.setPassword(request.getParameter("password"));
 		// Passing login bean object to service method
 		RegisterBean user = service.authenticate(login);
-		System.out.println("User"+user);
 		return user;
 	}
 
@@ -42,5 +41,6 @@ public class LoginController {
 		change.setPassword(request.getParameter("password"));
 		return service.changePassword(change);
 	}
-
+	
+	
 }

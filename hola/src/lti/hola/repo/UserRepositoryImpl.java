@@ -39,7 +39,6 @@ public class UserRepositoryImpl implements UserRepository {
 		try {
 			conn = getConnection();
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			System.out.println(login.getEmail());
 			stmt.setString(1, login.getEmail());
 			stmt.setString(2, login.getPassword());
 			ResultSet rs = stmt.executeQuery();
@@ -161,5 +160,7 @@ public class UserRepositoryImpl implements UserRepository {
 		}
 
 	}
+
+	
 
 }

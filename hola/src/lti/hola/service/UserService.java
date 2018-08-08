@@ -12,4 +12,5 @@ public interface UserService {
 	boolean changePassword(LoginBean login);
 	
 	boolean persist(RegisterBean register);
+	
 }

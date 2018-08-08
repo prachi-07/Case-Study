@@ -1,18 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="banner.jsp"/>
+	<jsp:include page="banner.jsp" />
+	<%
+		if (request.getParameter("invalid") != null) {
+	%>
+	<font size="3" color="Red">Invalid email id / movie</font>
+	<%
+		}
+	%>
 	<form action="User.hola" method="get">
 
 		<table width="400" align="center">
 			<tr>
-				<h3>What is your favourite Movie?</h3><br>
+				<h3>What is your favourite Movie?</h3>
+				<br>
 				<td center="align">Movie Name: <input type="text" name="movie"></td>
 			</tr>
 			<tr>
@@ -23,6 +31,6 @@
 			</tr>
 		</table>
 	</form>
-	<%@ include file="footer.html" %>
+	<%@ include file="footer.html"%>
 </body>
 </html>

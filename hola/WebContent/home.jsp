@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -8,6 +8,9 @@
 </head>
 <body>
 <jsp:include page="banner.jsp"/>
+<% if(request.getParameter("invalid") != null) {%>
+<font size = "3" color="Red">Invalid email id / password</font>
+<% } %>
 		<form action="User.hola" method="get">
 			<table width="400" align="center">
 				<tr>

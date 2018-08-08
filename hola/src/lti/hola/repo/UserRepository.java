@@ -18,4 +18,5 @@ public interface UserRepository {
 	boolean changePassword(LoginBean login);
 
 	boolean persist(RegisterBean register);
+	
 }
